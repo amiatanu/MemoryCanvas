@@ -12,8 +12,12 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/posts", postRoutes);
+app.use("/", (req, res) => {
+  res.send("My Empire");
+});
 
-const CONNECTION_URL = "mongodb+srv://atanu_personal_projects:jWPg3c04HBnC8kRB@personal-project.wef9ltg.mongodb.net/?retryWrites=true&w=majority";
+const CONNECTION_URL =
+  "mongodb+srv://atanu_personal_projects:jWPg3c04HBnC8kRB@personal-project.wef9ltg.mongodb.net/?retryWrites=true&w=majority";
 const PORT = /* process.env.PORT || */ 5000;
 
 mongoose
